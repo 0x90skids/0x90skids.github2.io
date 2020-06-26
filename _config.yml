@@ -1,22 +1,20 @@
 # Site settings
-title: Klise Theme # site title
+title: 0x90skids # site title
 description: >- # site description
-  He's writing in Bahasa about web technology and experience as a journal 
-  for documentation things that he learned, meet him <a href="https://github.com/piharpi" target="_blank" rel="noopener">@github</a>.
+  CTF Team
 lang: en-US # default lang
 timezone: Asia/Jakarta # set your timezone
 image: assets/img/ogp.png # This image used for Open Graph more info https://ogp.me/
-repo: https://github.com/piharpi/jekyll-klise # site repo [optional]
+repo: https://github.com/0x90skids # site repo [optional]
 mode: dark # default theme "dark" | "light"
 
 # Profile settings
 author:
-  name: Your Name # author name
+  name: 0x90skids # author name
   bio: >- # tell to the world
-    The minimalist Jekyll theme, light and dark mode support, for running a personal site and blog, 
-    meet Klisé theme at <a href="https://github.com/piharpi/jekyll-klise" target="_blank" rel="noopener">@github</a>.
-  username: username # social media username eg. github, twitter 
-  email: your-email@email.com # your contact adress
+    CTF Team
+  username: 0x90skids # social media username eg. github, twitter 
+  email: # your contact adress
   avatar: /assets/img/avatar.jpg # change with your own avatar
 
 # Url settings
