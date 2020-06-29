@@ -11,17 +11,7 @@ image: /cara-memperbarui-fork-repository/repo.png
 ---
 # Categories 
 
-+  [Crypto](#crypto)
 +  [Misc](#misc)
-+  [Pwn](#pwn)
-+  [Rev](#rev)
-+  [Web](#web)
-
-## Crypto
-
-#### web/inspector-general   
-**Solved By:** Name  
-**Points:** 112
 
 ## Misc
 ### misc/uglybash
@@ -44,35 +34,14 @@ exec 5> debug_output.txt
 BASH_XTRACEFD="5"
 ### original script goes below here
 ```
-2) Run the script with -x flag 
+2) The script was run with the -x flag. 
 ```bash
 bash -x cmd.exe
 ```
 
-3) Flag is located in the comments along the left side in the debug_output.txt, lines 70 -108  
+3) Flag was located in the comments along the left side in the debug_output.txt, lines 70 -108  
 <figure>
 <img src="uglybash.png" alt="results of debug">
 <figcaption>Fig 1. Flag is spelled out downwards on the left side</figcaption>
 </figure>
 
-#### web/inspector-general 
-**Solved By:** Name  
-**Points:** 112
-
-## Pwn
-
-#### web/inspector-general 
-**Solved By:** Name  
-**Points:** 112
-
-## Rev
-
-#### web/inspector-general 
-**Solved By:** Name  
-**Points:** 112
-
-## Web
-
-#### web/inspector-general 
-**Solved By:** Name  
-**Points:** 112
