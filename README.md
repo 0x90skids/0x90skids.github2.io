@@ -45,11 +45,25 @@ git checkout dev
 jekyll serve 
 ```
 
-7) Make edits to the development branch. You can preview changes live by visiting http://127.0.0.1:4000
+> You might have to start the development server with bundle exec 
 
-8) Any pull requests into the master branch will automatically trigger [Netlify](https://app.netlify.com/sites/0x90skids2/deploys) to build the site. Build status will be shown in the pull request, and can be seen with the Netlify build badge. 
+```
+bundle exec jekyll serve
+```
+
+1) Make edits to the development branch. You can preview changes live by visiting http://127.0.0.1:4000
+
+2) Any pull requests into the master branch will automatically trigger [Netlify](https://app.netlify.com/sites/0x90skids2/deploys) to build the site. Build status will be shown in the pull request, and can be seen with the Netlify build badge. 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01246265-66d4-4aae-bc5f-e78700c6b606/deploy-status)](https://app.netlify.com/sites/0x90skids2/deploys)
+
+## Additional Commands 
+
+Clean the site cache with jekyll clean 
+
+```
+jekyll clean
+```
 
 ## About the Template
 
