@@ -21,10 +21,17 @@ cd 0x90skids.github2.io
 
 3) Install dependencies  
 
-Running the development server locally requires ruby and bundle. On mac osx these can be installed with brew 
+Running the development server locally requires ruby and bundle.
+
+On MacOS X these can be installed with brew :
 
 ```
 brew install ruby 
+```
+
+On Ubuntu, this can be installed via apt :
+```
+sudo apt install ruby ruby-bundler ruby-dev
 ```
 
 4) Install the required dependencies 
