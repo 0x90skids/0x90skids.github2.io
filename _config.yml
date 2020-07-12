@@ -57,6 +57,12 @@ jekyll_compose:
 # Build settings
 sass:
   style: compressed
+  sass_dir: _sass
+  load_paths:
+    - _sass
+    - node_modules
+  exclude: []
+
 
 include:
   - _redirects
