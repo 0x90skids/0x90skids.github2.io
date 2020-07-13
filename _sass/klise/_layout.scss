@@ -1,5 +1,5 @@
 // Navbar
-.navbar1 {
+.navbar-klise {
   height: auto;
   max-width: calc(#{$wide-size} - (#{$spacing-full} * 2));
   max-width: -webkit-calc(#{$wide-size} - (#{$spacing-full} * 2));
@@ -12,7 +12,7 @@
 }
 
 // Navigation
-.menu1 {
+.menu {
   user-select: none;
   -ms-user-select: none;
   -webkit-user-select: none;
@@ -60,7 +60,7 @@
     }
   }
 
-  .trigger1 {
+  .trigger {
     float: right;
   }
 
