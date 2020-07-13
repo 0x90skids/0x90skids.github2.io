@@ -8,9 +8,6 @@ comments: false
 
 [comment]: <> (Overview)
 
-*0x90skids CTF is a collection of challenges created by team members. Click the challenge card for details.*
-
-
 # Pwn
 
 <p>

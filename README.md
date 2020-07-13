@@ -4,6 +4,15 @@
 
 The website for the 0x90skids CTF team.  
 
+## Table of Contents
+
+- [0x90skids](#0x90skids)
+  - [Table of Contents](#table-of-contents)
+  - [Making Edits to the Website](#making-edits-to-the-website)
+  - [Adding Challenges to the CTF](#adding-challenges-to-the-ctf)
+  - [Additional Commands](#additional-commands)
+  - [About the Template](#about-the-template)
+
 
 ## Making Edits to the Website 
 
@@ -63,6 +72,35 @@ bundle exec jekyll serve
 2) Any pull requests into the master branch will automatically trigger [Netlify](https://app.netlify.com/sites/0x90skids2/deploys) to build the site. Build status will be shown in the pull request, and can be seen with the Netlify build badge. 
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01246265-66d4-4aae-bc5f-e78700c6b606/deploy-status)](https://app.netlify.com/sites/0x90skids2/deploys)
+
+## Adding Challenges to the CTF 
+
+1) Create a new challenge md file in the _chals directory
+
+2) Edit the necessary frontmatter tags. These are essential since the CTF page uses these tags to properly format and display the challenge. The necessary frontmatter tags are below. 
+
+
+```html
+---
+layout: chals
+title: Example1 
+category: web
+author: Jane Doe
+date: 2020-06-25 01:00 +0700
+modified: 2020-03-07 16:49:47 +07:00
+description: A quick overview
+link: https://example.com
+image: 
+---
+```
+
+3) If you have an external link, add it to the link. If not, you must put "none" for now until a fix is in place  
+
+```html
+link: none
+```
+
+4) Ensure that the category is lowercase, i.e web NOT Web
 
 ## Additional Commands 
 

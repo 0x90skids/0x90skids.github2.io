@@ -14,7 +14,138 @@ layout: compress
       <h1 class="header-title center" itemprop="headline">{{ page.title | escape }}.</h1>
     </header>
     <main class="page-content" aria-label="Content">
-      {% include anchor_headings.html html=content anchorClass="anchor-head" beforeHeading=true h_min=4 h_max=4 %}
+      <i>0x90skids CTF is a collection of challenges created by team members. Click the challenge card to expand for details.</i>
+      
+      <h2 class="posts-item-note">Chals </h2>
+
+      <h4> Web </h4>
+
+      <p>
+      {% for chals in site.chals %}
+        {% if chals.category == "web" %}
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ chals.title }}" aria-expanded="false" aria-controls="multiCollapseExample2">{{chals.title}}</button>
+        {% endif %}
+      {% endfor %}
+      </p>
+
+      {% for chals in site.chals %}
+        {% if chals.category == "web" %}
+          <div class="collapse multi-collapse" id="{{ chals.title }}">
+            <div class="card w-100">
+              <div class="card-header">
+                  {{ chals.title }}
+              </div>
+              <div class="card-body">
+                <i>Author: {{ chals.author }}</i>
+                <h5 class="card-title">{{ chals.description }}</h5>
+                <br/>
+                <p class="card-text">{{ chals.content | markdownify }}</p>
+                {% if chals.link != "none" %}
+                  <a class="btn btn-primary" href="{{ chals.link }}" role="button">{{ chals.link }}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+
+      <h4> Pwn </h4>
+
+      <p>
+      {% for chals in site.chals %}
+        {% if chals.category == "pwn" %}
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ chals.title }}" aria-expanded="false" aria-controls="multiCollapseExample2">{{chals.title}}</button>
+        {% endif %}
+      {% endfor %}
+      </p>
+
+      {% for chals in site.chals %}
+        {% if chals.category == "pwn" %}
+          <div class="collapse multi-collapse" id="{{ chals.title }}">
+            <div class="card w-100">
+              <div class="card-header">
+                  {{ chals.title }}
+              </div>
+              <div class="card-body">
+                <i>Author: {{ chals.author }}</i>
+                <h5 class="card-title">{{ chals.description }}</h5>
+                <br/>
+                <p class="card-text">{{ chals.content | markdownify }}</p>
+                {% if chals.link != "none" %}
+                  <a class="btn btn-primary" href="#" role="button">{{ chals.link }}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+     <h4> Rev </h4>
+
+      <p>
+      {% for chals in site.chals %}
+        {% if chals.category == "rev" %}
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ chals.title }}" aria-expanded="false" aria-controls="multiCollapseExample2">{{chals.title}}</button>
+        {% endif %}
+      {% endfor %}
+      </p>
+
+      {% for chals in site.chals %}
+        {% if chals.category == "rev" %}
+          <div class="collapse multi-collapse" id="{{ chals.title }}">
+            <div class="card w-100">
+              <div class="card-header">
+                  {{ chals.title }}
+              </div>
+              <div class="card-body">
+                <i>Author: {{ chals.author }}</i>
+                <h5 class="card-title">{{ chals.description }}</h5>
+                <br/>
+                <p class="card-text">{{ chals.content | markdownify }}</p>
+                {% if chals.link != "none" %}
+                  <a class="btn btn-primary" href="#" role="button">{{ chals.link }}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+
+     <h4> Misc </h4>
+
+      <p>
+      {% for chals in site.chals %}
+        {% if chals.category == "misc" %}
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ chals.title }}" aria-expanded="false" aria-controls="multiCollapseExample2">{{chals.title}}</button>
+        {% endif %}
+      {% endfor %}
+      </p>
+
+      {% for chals in site.chals %}
+        {% if chals.category == "misc" %}
+          <div class="collapse multi-collapse" id="{{ chals.title }}">
+            <div class="card w-100">
+              <div class="card-header">
+                  {{ chals.title }}
+              </div>
+              <div class="card-body">
+                <i>Author: {{ chals.author }}</i>
+                <h5 class="card-title">{{ chals.description }}</h5>
+                <br/>
+                <p class="card-text">{{ chals.content | markdownify }}</p>
+                {% if chals.link != "none" %}
+                  <a class="btn btn-primary" href="#" role="button">{{ chals.link }}</a>
+                {% endif %}
+              </div>
+            </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+
+
     </main>
     {% include footer.html %}
   </div>

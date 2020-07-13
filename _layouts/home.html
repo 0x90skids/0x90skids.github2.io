@@ -14,3 +14,18 @@ home: true
   </h4>
 </article>
 {% endfor %}
+
+<br/>
+
+<h4 class="posts-item-note">Recent Chals</h4>
+{% for chals in site.chals %}
+
+<article class="post-item">
+  <span class="post-item-date">{{ chals.date | date: "%b %d, %Y" }}</span>
+  <h4 class="post-item-title">
+    <a href="/ctf">{{chals.title %}}</a>
+  </h4>
+</article>
+
+{% endfor %}
+

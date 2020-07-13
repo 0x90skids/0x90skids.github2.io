@@ -26,6 +26,10 @@ fb_appid:
 
 # Collection setting
 collections:
+  chals:
+    output: true
+    sort_by: category
+
   posts:
     output: true
 
