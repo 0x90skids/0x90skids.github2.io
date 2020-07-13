@@ -4,14 +4,12 @@ layout: compress
 <!DOCTYPE html>
 <html lang="{{ page.lang | default: site.lang | default: " en " }}">
 {% include header.html %}
-
-
 <body data-theme="{{ site.mode }}">
   {% include navbar.html %}
   <div class="wrapper">
     {% include author.html %}
+    {{ content }}
     <main aria-label="Content">
-      {{ content }}
     </main>
     {% include footer.html %}
   </div>
