@@ -9,6 +9,7 @@ The website for the 0x90skids CTF team.
 - [0x90skids](#0x90skids)
   - [Table of Contents](#table-of-contents)
   - [Making Edits to the Website](#making-edits-to-the-website)
+  - [Creating a new post](#creating-a-new-post)
   - [Adding Challenges to the CTF](#adding-challenges-to-the-ctf)
   - [Additional Commands](#additional-commands)
   - [About the Template](#about-the-template)
@@ -73,6 +74,30 @@ bundle exec jekyll serve
 
 [![Netlify Status](https://api.netlify.com/api/v1/badges/01246265-66d4-4aae-bc5f-e78700c6b606/deploy-status)](https://app.netlify.com/sites/0x90skids2/deploys)
 
+## Creating a new post 
+
+1) Posts are held in the _posts directory
+
+2) CTF writeups are held in the _posts/ctf directory
+
+3) To create a new writeup, create a new markdown file in the writeup directory and add the necessary frontmatter content to the top
+
+```html
+---
+layout: post
+title: RedPwn CTF Writeup
+date: 2020-06-25 01:00 +0700
+modified: 2020-03-07 16:49:47 +07:00
+description: Our First Team CTF
+tag:
+  - ctf
+  - writeup
+image: /cara-memperbarui-fork-repository/repo.png
+---
+```
+
+4) Update the frontmatter variables with the necessary information and merge to master branch
+
 ## Adding Challenges to the CTF 
 
 1) Create a new challenge md file in the _chals directory
@@ -101,6 +126,8 @@ link: none
 ```
 
 4) Ensure that the category is lowercase, i.e web NOT Web
+
+5) The actual content of the challenge, i.e the description, is written in markdown below the frontmatter
 
 ## Additional Commands 
 
