@@ -1,4 +1,4 @@
-<div class="navbar" role="navigation">
+<div class="navbar-klise" role="navigation">
   <nav class="menu">
     <input type="checkbox" id="menu-trigger" class="menu-trigger" />
     <label for="menu-trigger">
@@ -160,7 +160,7 @@
       </svg>
     </a>
     <div class="trigger">
-      <div class="trigger-container">
+      <div class="trigger-container1">
         {% assign url = page.url %} {% for menu in site.data.menus %} {% if url
         == menu.url %}
         <a class="menu-link active" href="{{ menu.url }}">{{ menu.title }}</a>

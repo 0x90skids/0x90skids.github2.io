@@ -6,6 +6,10 @@
   url: /about/
   external: false
 
+- title: ctf
+  url: /ctf/
+  external: false
+
 - title: github
   url: "https://github.com/0x90skids"
   external: true
