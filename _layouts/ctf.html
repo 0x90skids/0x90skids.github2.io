@@ -47,9 +47,125 @@ layout: compress
                   <h5 style="color:white;">{{ chals.description }}</h5>
                   <br/>
                   <p class="card-text">{{ chals.content | markdownify }}</p>
+                  {% if chals.popup != "none" %}
+                  <!-- Small modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">View Message</button>
+
+                    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-sm bg-dark">
+                        <div class="modal-content bg-dark">
+                            <p class="text-light">{{ chals.popupcontent }}</p>
+                        </div>
+                      </div>
+                    </div>
+                  {% endif %}
+                  {% if chals.link != "none" %}
+                    <a class="btn btn-primary text-light" href="{{ chals.link }}" role="button">{{ chals.link }}</a>
+                  {% endif %}
+                </div>
+              </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+
+      <h4> Pwn </h4>
+
+      <p>
+      {% for chals in site.chals %}
+        {% if chals.category == "pwn" %}
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ chals.title }}" aria-expanded="false" aria-controls="multiCollapseExample2">{{chals.title}}</button>
+        {% endif %}
+      {% endfor %}
+      </p>
+
+        {% for chals in site.chals %}
+        {% if chals.category == "pwn" %}
+          {% if chals.image == "none" %}
+          <div class="collapse multi-collapse" id="{{ chals.title }}">
+              <div class="card w-100">
+                <div class="card-header">
+                    {{ chals.title }}
+                </div>
+            {% elsif chals.image != "none" %}
+            <div class="collapse multi-collapse" id="{{ chals.title }}">
+            <div class="card mb-3 text-white bg-dark">
+              <img src="{{ chals.image }}" class="card-img-top" alt="...">
+            {% endif %}
+                <div class="card-body">
+                  <i>Author: {{ chals.author }}</i>
+                  <h5 style="color:white;">{{ chals.description }}</h5>
+                  <br/>
+                  <p class="card-text">{{ chals.content | markdownify }}</p>
                   {% if chals.link != "none" %}
                     <a class="btn btn-primary" href="{{ chals.link }}" role="button">{{ chals.link }}</a>
                   {% endif %}
+                  
+                  {% if chals.popup != "none" %}
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                      View Message
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <p style="color:black;"> {{ chals.popupcontent }} </p>
+                            <h1>{{ chals.popupcontent }}</h1>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                  
+                  {% endif %}
+                </div>
+              </div>
+          </div>
+        {% endif %}
+      {% endfor %}
+
+  <h4> Rev </h4>
+
+      <p>
+      {% for chals in site.chals %}
+        {% if chals.category == "rev" %}
+        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ chals.title }}" aria-expanded="false" aria-controls="multiCollapseExample2">{{chals.title}}</button>
+        {% endif %}
+      {% endfor %}
+      </p>
+
+       {% for chals in site.chals %}
+        {% if chals.category == "rev" %}
+          {% if chals.image == "none" %}
+          <div class="collapse multi-collapse" id="{{ chals.title }}">
+              <div class="card w-100">
+                <div class="card-header">
+                    {{ chals.title }}
+                </div>
+            {% elsif chals.image != "none" %}
+            <div class="collapse multi-collapse" id="{{ chals.title }}">
+            <div class="card mb-3 text-white bg-dark">
+              <img src="{{ chals.image }}" class="card-img-top" alt="...">
+            {% endif %}
+                <div class="card-body">
+                  <i>Author: {{ chals.author }}</i>
+                  <h5 style="color:white;">{{ chals.description }}</h5>
+                  <br/>
+                  <p class="card-text">{{ chals.content | markdownify }}</p>
+                  {% if chals.link != "none" %}
+                    <a class="btn btn-primary" href="{{ chals.link }}" role="button">{{ chals.link }}</a>
+                  {% endif %}
+                  
                   {% if chals.popup != "none" %}
                     <!-- Button trigger modal -->
                     <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
@@ -83,64 +199,66 @@ layout: compress
       {% endfor %}
 
 
-      <h4> Pwn </h4>
+   <h4> Crypto </h4>
 
       <p>
       {% for chals in site.chals %}
-        {% if chals.category == "pwn" %}
+        {% if chals.category == "crypto" %}
         <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ chals.title }}" aria-expanded="false" aria-controls="multiCollapseExample2">{{chals.title}}</button>
         {% endif %}
       {% endfor %}
       </p>
 
-      {% for chals in site.chals %}
-        {% if chals.category == "pwn" %}
+       {% for chals in site.chals %}
+        {% if chals.category == "crypto" %}
+          {% if chals.image == "none" %}
           <div class="collapse multi-collapse" id="{{ chals.title }}">
-            <div class="card w-100">
-              <div class="card-header">
-                  {{ chals.title }}
-              </div>
-              <div class="card-body">
-                <i>Author: {{ chals.author }}</i>
-                <h5 class="card-title">{{ chals.description }}</h5>
-                <br/>
-                <p class="card-text">{{ chals.content | markdownify }}</p>
-                {% if chals.link != "none" %}
-                  <a class="btn btn-primary" href="#" role="button">{{ chals.link }}</a>
-                {% endif %}
-              </div>
-            </div>
-          </div>
-        {% endif %}
-      {% endfor %}
+              <div class="card w-100">
+                <div class="card-header">
+                    {{ chals.title }}
+                </div>
+            {% elsif chals.image != "none" %}
+            <div class="collapse multi-collapse" id="{{ chals.title }}">
+            <div class="card mb-3 text-white bg-dark">
+              <img src="{{ chals.image }}" class="card-img-top" alt="...">
+            {% endif %}
+                <div class="card-body">
+                  <i>Author: {{ chals.author }}</i>
+                  <h5 style="color:white;">{{ chals.description }}</h5>
+                  <br/>
+                  <p class="card-text">{{ chals.content | markdownify }}</p>
+                  {% if chals.link != "none" %}
+                    <a class="btn btn-primary" href="{{ chals.link }}" role="button">{{ chals.link }}</a>
+                  {% endif %}
+                  
+                  {% if chals.popup != "none" %}
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                      View Message
+                    </button>
 
-     <h4> Rev </h4>
-
-      <p>
-      {% for chals in site.chals %}
-        {% if chals.category == "rev" %}
-        <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ chals.title }}" aria-expanded="false" aria-controls="multiCollapseExample2">{{chals.title}}</button>
-        {% endif %}
-      {% endfor %}
-      </p>
-
-      {% for chals in site.chals %}
-        {% if chals.category == "rev" %}
-          <div class="collapse multi-collapse" id="{{ chals.title }}">
-            <div class="card w-100">
-              <div class="card-header">
-                  {{ chals.title }}
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <pstyle="color:black;"> {{ chals.popupcontent }} </pstyle=>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                  
+                  {% endif %}
+                </div>
               </div>
-              <div class="card-body">
-                <i>Author: {{ chals.author }}</i>
-                <h5 class="card-title">{{ chals.description }}</h5>
-                <br/>
-                <p class="card-text">{{ chals.content | markdownify }}</p>
-                {% if chals.link != "none" %}
-                  <a class="btn btn-primary" href="#" role="button">{{ chals.link }}</a>
-                {% endif %}
-              </div>
-            </div>
           </div>
         {% endif %}
       {% endfor %}
@@ -156,30 +274,59 @@ layout: compress
       {% endfor %}
       </p>
 
-      {% for chals in site.chals %}
+       {% for chals in site.chals %}
         {% if chals.category == "misc" %}
+          {% if chals.image == "none" %}
           <div class="collapse multi-collapse" id="{{ chals.title }}">
-            <div class="card w-100">
-              <div class="card-header">
-                  {{ chals.title }}
+              <div class="card w-100">
+                <div class="card-header">
+                    {{ chals.title }}
+                </div>
+            {% elsif chals.image != "none" %}
+            <div class="collapse multi-collapse" id="{{ chals.title }}">
+            <div class="card mb-3 text-white bg-dark">
+              <img src="{{ chals.image }}" class="card-img-top" alt="...">
+            {% endif %}
+                <div class="card-body">
+                  <i>Author: {{ chals.author }}</i>
+                  <h5 style="color:white;">{{ chals.description }}</h5>
+                  <br/>
+                  <p class="card-text">{{ chals.content | markdownify }}</p>
+                  {% if chals.link != "none" %}
+                    <a class="btn btn-primary" href="{{ chals.link }}" role="button">{{ chals.link }}</a>
+                  {% endif %}
+                  
+                  {% if chals.popup != "none" %}
+                    <!-- Button trigger modal -->
+                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModalCenter">
+                      View Message
+                    </button>
+
+                    <!-- Modal -->
+                    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLongTitle">Modal title</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                            </button>
+                          </div>
+                          <div class="modal-body">
+                            <pstyle="color:black;"> {{ chals.popupcontent }} </pstyle=>
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>                  
+                  {% endif %}
+                </div>
               </div>
-              <div class="card-body">
-                <i>Author: {{ chals.author }}</i>
-                <h5 class="card-title">{{ chals.description }}</h5>
-                <br/>
-                <p class="card-text">{{ chals.content | markdownify }}</p>
-                {% if chals.link != "none" %}
-                  <a class="btn btn-primary" href="#" role="button">{{ chals.link }}</a>
-                {% endif %}
-              </div>
-            </div>
           </div>
         {% endif %}
       {% endfor %}
-
-
-
-
     </main>
     {% include footer.html %}
   </div>
