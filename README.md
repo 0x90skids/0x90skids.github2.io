@@ -8,14 +8,33 @@ The website for the 0x90skids CTF team.
 
 - [0x90skids](#0x90skids)
   - [Table of Contents](#table-of-contents)
-  - [Making Edits to the Website](#making-edits-to-the-website)
+  - [Requirements](#requirements)
+  - [Jekyll Structure](#jekyll-structure)
+  - [Editting Locally with Jekyll](#editting-locally-with-jekyll)
   - [Creating a new post](#creating-a-new-post)
   - [Adding Challenges to the CTF](#adding-challenges-to-the-ctf)
+  - [Link Previews](#link-previews)
   - [Additional Commands](#additional-commands)
   - [About the Template](#about-the-template)
 
 
-## Making Edits to the Website 
+## Requirements
+The 0x90skids website is build using [Jekyll]() a static web generator. Jekyll enables you to write site content in markdown and generate static web pages. It also enables you to run a simple local development server to live preview changes. See [Editing Locally with Jekyll](#editting-locally-with-jekyll) for installation instructions. 
+
+## Jekyll Structure  
+
++  _chals: contains individual markdown ctf challenges, generated on the /ctf past
++  _data: contains the links for the navivation bar
++  _includes: contains the html code for items like headers, footers, navbar, ect
++  _layouts: contains the html for page layouts like post pages, the home page, the ctf page, ect
++  _posts: contains markdown files for blog posts (i.e ctf writeups)
++  _sass: contains custom css files
++  _site: contains the statically generated jekyll content 
++  _assets: contains css, favicons, images, ect
++  nodes_modules: contains bootstrap data
+
+
+## Editting Locally with Jekyll
 
 1) Clone the repository 
 
@@ -31,7 +50,7 @@ cd 0x90skids.github2.io
 
 3) Install dependencies  
 
-Running the development server locally requires ruby and bundle.
+*Running the development server locally requires ruby and bundle.*
 
 On MacOS X these can be installed with brew :
 
@@ -62,7 +81,7 @@ git checkout dev
 jekyll serve 
 ```
 
-> You might have to start the development server with bundle exec 
+*You might have to start the development server with bundle exec*
 
 ```
 bundle exec jekyll serve
@@ -84,50 +103,77 @@ bundle exec jekyll serve
 
 ```html
 ---
-layout: post
-title: RedPwn CTF Writeup
-date: 2020-06-25 01:00 +0700
-modified: 2020-03-07 16:49:47 +07:00
-description: Our First Team CTF
+layout: 
+title: 
+date: 
+modified:
+description: 
 tag:
   - ctf
   - writeup
-image: /cara-memperbarui-fork-repository/repo.png
+image: 
 ---
 ```
 
 4) Update the frontmatter variables with the necessary information and merge to master branch
 
 ## Adding Challenges to the CTF 
+Markdown files in the _chals directory are statically generated into the custom /ctf page using the ctf html layout located in _layouts/ctf.html. In order to properly render these md files, a series of *{{if}} .... {{else}}* liquid tags in ctf.html are used to categoriese and display the challenges.   
+
+Because of these tags, it's very impoartant to fill out the appropriate frontmatter information on the md file.
+
+
+**How to add chals to the ctf page**
 
 1) Create a new challenge md file in the _chals directory
 
-2) Edit the necessary frontmatter tags. These are essential since the CTF page uses these tags to properly format and display the challenge. The necessary frontmatter tags are below. 
+2) Edit the necessary frontmatter tags. 
 
 
 ```html
 ---
-layout: chals
-title: Example1 
-category: web
-author: Jane Doe
-date: 2020-06-25 01:00 +0700
-modified: 2020-03-07 16:49:47 +07:00
-description: A quick overview
-link: https://example.com
-image: 
+layout: default
+title: your-title
+category: web  
+author: your-name
+date: 
+modified: 
+description: your-description
+link: 
+image: /assets/img/header-image-name
+tip: none
+popup: true 
+popupcontent: your-content
+summary: your-summary
 ---
 ```
 
-3) If you have an external link, add it to the link. If not, you must put "none" for now until a fix is in place  
+**Frontmatter details**
 
-```html
-link: none
-```
+layout: must be default  
+title: can be anything you want
+category: must be lowercase, can only be one of the following. Open a feature request for more categories
++  web
++  pwn
++  rev
++  crypto
++  misc     
 
-4) Ensure that the category is lowercase, i.e web NOT Web
+**Frontmatter options**
+| front matter  | content  |
+|---|---|
+| author  | can be anything you want    |
+| date  | takes format 2020-07-14 01:00 +0700   |
+| modified  | takes format 2020-07-14 01:00 +0700    |
+| description  | can be anything you want  |
+link | this is optional, if you do not need a link then use "none"  
+| image  |  this is optional, if you do not want to display a header  image then using "none" will create a simple card. Supplying an image path here will result in a header image card being generated. Images here take the path /assets/img/image-name.png |
+| tip  | not implemented yet, leave as none  |
+| popup  |  optional, if you want a popup modal box, then use "true", if not, leave "false" |
+| popupcontent  | if you want a popup, place your popup content here, otherwise, leave blank  |
+|  summary | used for twitter card preview. Leave blank if desired  |
 
-5) The actual content of the challenge, i.e the description, is written in markdown below the frontmatter
+## Link Previews
 
 ## Additional Commands 
 
