@@ -10,6 +10,7 @@ mode: dark # default theme "dark" | "light"
 baseurl: 
 url: https://0x90skids.com
 title_image: https://0x90skids.com/assets/img/ctftime.png
+twitter_username: 0x90skids # used for twitter card preview
 
 # Profile settings
 author:
