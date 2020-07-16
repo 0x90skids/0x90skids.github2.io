@@ -8,6 +8,7 @@ image: assets/img/ogp.png # This image used for Open Graph more info https://ogp
 repo: https://github.com/0x90skids # site repo [optional]
 mode: dark # default theme "dark" | "light"
 baseurl: 
+url: https://0x90skids.com
 
 # Profile settings
 author:
