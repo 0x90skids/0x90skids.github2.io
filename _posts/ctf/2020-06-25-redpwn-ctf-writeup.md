@@ -7,17 +7,18 @@ description:  0x90skids writeups for the 2020 RedPwn CTF Competition
 tag:
   - ctf
   - writeup
-image: /redpwn-ctf-writeup/carbon.png
+image: https://0x90skids.com/redpwn-ctf-writeup/carbon.png
 author: 0x90skids
 summmary: 0x90skids writeups for the 2020 RedPwn CTF Competition
 ---
 >  RedPwn is an annual CTF event hosted online. 0x90skids recently competed in the 2020 competition and placed 63 overall.
 
-<iframe
-  src="https://carbon.now.sh/embed?bg=rgba(171%2C%20184%2C%20195%2C%201)&t=hopscotch&wt=none&l=yaml&ds=true&dsyoff=20px&dsblur=68px&wc=true&wa=false&pv=56px&ph=56px&ln=false&fl=1&fm=Hack&fs=14px&lh=133%25&si=false&es=2x&wm=false&code=%2523include%2520%253Cstdio.h%253E%250A%2523include%2520%253Cstring.h%253E%250A%250Aint%2520main(void)%250A%257B%250A%2520%2520char%2520name%255B16%255D%253B%250A%2520%2520%250A%2520%2520setbuf(stdout%252C%2520NULL)%253B%250A%2520%2520setbuf(stdin%252C%2520NULL)%253B%250A%2520%2520setbuf(stderr%252C%2520NULL)%253B%250A%250A%2520%2520puts(%2522Welcome%2520to%2520the%2520library...%2520What's%2520your%2520name%253F%2522)%253B%250A%250A%2520%2520read(0%252C%2520name%252C%25200x100)%253B%250A%2520%2520puts(%2522Hello%2520there%253A%2520%2522)%253B%250A%2520%2520puts(name)%253B%250A%257D"
-  style="width: 823px; height: 492px; border:0; transform: scale(1); overflow:hidden;"
-  sandbox="allow-scripts allow-same-origin">
-</iframe>
+<div class="row mt-3">
+    <div class="col-sm mt-3 mt-md-0">
+        <img class="img-fluid rounded z-depth-1" src="carbon.png">
+    </div>
+</div>
+
 
 # Categories 
 
