@@ -1,6 +1,6 @@
 # 0x90skids 
 
-[![Netlify Status](https://api.netlify.com/api/v1/badges/01246265-66d4-4aae-bc5f-e78700c6b606/deploy-status)](https://app.netlify.com/sites/0x90skids2/deploys)
+[![Netlify Status](https://api.netlify.com/api/v1/badges/01246265-66d4-4aae-bc5f-e78700c6b606/deploy-status)](https://app.netlify.com/sites/0x90skids2/deploys) ![](https://img.shields.io/github/issues-pr-closed-raw/0x90skids/0x90skids.github2.io) ![](https://img.shields.io/github/issues-raw/0x90skids/0x90skids.github2.io)
 
 The website for the 0x90skids CTF team.  
 
