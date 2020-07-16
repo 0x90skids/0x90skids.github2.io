@@ -44,6 +44,26 @@
   />
   {% endif %}
 
+      <!-- Twitter cards -->
+  <meta name="twitter:site"    content="@{{ site.twitter_username }}">
+  <meta name="twitter:creator" content="@{{ page.author }}">
+  <meta name="twitter:title"   content="{{ page.title }}">
+
+  {% if page.summary %}
+  <meta name="twitter:description" content="{{ page.summary }}">
+  {% else %}
+  <meta name="twitter:description" content="{{ site.description }}">
+  {% endif %}
+
+  {% if page.image %}
+  <meta name="twitter:card"  content="summary_large_image">
+  <meta name="twitter:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png">
+  {% else %}
+  <meta name="twitter:card"  content="summary_large_image">
+  <meta name="twitter:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png">
+  {% endif %}
+<!-- end of Twitter cards -->
+
 
   <meta
     name="description"
@@ -103,6 +123,7 @@
   {% endif %}
   <meta property="og:image:width" content="640" />
   <meta property="og:image:height" content="640" />
+
   <meta name="twitter:card" content="summary_large_image"/>
   <meta name="twitter:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png">
 
@@ -132,9 +153,9 @@
     }}"
   />
   {% if page.image %}
-  <meta name="twitter:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png" />
+  <meta name="twitter:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png"/>
   {% else %}
-  <meta name="twitter:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png" />
+  <meta name="twitter:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png"/>
   {% endif %} {% feed_meta %}
   <link
     rel="apple-touch-icon"
@@ -159,33 +180,13 @@
     href="/assets/favicons/safari-pinned-tab.svg"
     color="#5bbad5"
   />
-  <meta name="apple-mobile-web-app-title" content="Jekyll Klise" />
-  <meta name="application-name" content="Jekyll Klise" />
+  <meta name="apple-mobile-web-app-title" content="0x90skids" />
+  <meta name="application-name" content="0x90skids" />
   <meta name="msapplication-TileColor" content="#da532c" />
   <meta name="theme-color" content="#2c2c2c" />
 
   <link rel="stylesheet" href="/assets/css/style.css" />
   <link rel="stylesheet" href="/assets/css/enboot.css" />
   <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
-
-    <!-- Twitter cards -->
-  <meta name="twitter:site"    content="@{{ site.twitter_username }}">
-  <meta name="twitter:creator" content="@{{ page.author }}">
-  <meta name="twitter:title"   content="{{ page.title }}">
-
-  {% if page.summary %}
-  <meta name="twitter:description" content="{{ page.summary }}">
-  {% else %}
-  <meta name="twitter:description" content="{{ site.description }}">
-  {% endif %}
-
-  {% if page.image %}
-  <meta name="twitter:card"  content="summary_large_image">
-  <meta name="twitter:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png">
-  {% else %}
-  <meta name="twitter:card"  content="summary_large_image">
-  <meta name="twitter:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png">
-  {% endif %}
-<!-- end of Twitter cards -->
 
 </head>
