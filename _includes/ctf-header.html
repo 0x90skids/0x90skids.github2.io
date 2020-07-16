@@ -24,6 +24,8 @@
       page.url  | remove: 'index.html' | remove: '.html' | absolute_url
     }}"
   />
+
+
   {% if paginator.previous_page %}
   <link
     rel="prev"
@@ -43,52 +45,7 @@
     }}"
   />
   {% endif %}
-  <meta
-    name="description"
-    content="{{
-      page.description
-        | default: site.description
-        | strip_html
-        | normalize_whitespace
-        | truncate: 200
-        | escape
-    }}"
-  />
-  <meta name="referrer" content="no-referrer-when-downgrade" />
-  <meta property="fb:app_id" content="{{ site.fb_appid }}" />
-  {% if page.location %}
-  <meta property="og:type" content="article" />
-  <meta
-    property="article:publisher"
-    content="https://web.facebook.com/{{ site.author.username }}"
-  />
-  {% else %}
-  <meta property="og:type" content="website" />
-  {% endif %}
-  <meta
-    property="og:url"
-    content="{{
-      page.url | remove: 'index.html' | remove: '.html' | absolute_url
-    }}"
-  />
-  <meta
-    property="og:description"
-    content="{{
-      page.description
-        | default: site.description
-        | strip_html
-        | normalize_whitespace
-        | truncate: 200
-        | escape
-    }}"
-  />
-  {% if page.image %}
-  <meta property="og:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png" />
-  {% else %}
-  <meta property="og:image" content="https://0x90skids.com/assets/img/stranger-servers-ctf.png" />
-  {% endif %}
-  <meta property="og:image:width" content="640" />
-  <meta property="og:image:height" content="640" />
+
   <link
     rel="apple-touch-icon"
     sizes="180x180"
@@ -112,14 +69,7 @@
     href="/assets/favicons/safari-pinned-tab.svg"
     color="#5bbad5"
   />
-  <meta name="apple-mobile-web-app-title" content="Jekyll Klise" />
-  <meta name="application-name" content="Jekyll Klise" />
-  <meta name="msapplication-TileColor" content="#da532c" />
-  <meta name="theme-color" content="#2c2c2c" />
-
-  <link rel="stylesheet" href="/assets/css/style.css" />
-  <link rel="stylesheet" href="/assets/css/enboot.css" />
-  <link rel="stylesheet" href="/assets/font-awesome-4.7.0/css/font-awesome.min.css">
+ 
 
     <!-- Twitter cards -->
   <meta name="twitter:site"    content="@{{ site.twitter_username }}">
