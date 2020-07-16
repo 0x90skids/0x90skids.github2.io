@@ -3,11 +3,13 @@ layout: post
 title: RedPwn CTF Writeup
 date: 2020-06-25 01:00 +0700
 modified: 2020-03-07 16:49:47 +07:00
-description: Our First Team CTF
+description:  0x90skids writeups for the 2020 RedPwn CTF Competition
 tag:
   - ctf
   - writeup
-image: /cara-memperbarui-fork-repository/repo.png
+image: /assets/img/redPwn.png
+author: 0x90skids
+summmary: 0x90skids writeups for the 2020 RedPwn CTF Competition
 ---
 # Categories 
 
