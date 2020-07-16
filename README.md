@@ -174,6 +174,7 @@ link | this is optional, if you do not need a link then use "none"
 |  summary | used for twitter card preview. Leave blank if desired  |
 
 ## Link Previews
+*readme details comming soon*
 
 ## Additional Commands 
 
