@@ -9,6 +9,7 @@ repo: https://github.com/0x90skids # site repo [optional]
 mode: dark # default theme "dark" | "light"
 baseurl: 
 url: https://0x90skids.com
+title_image: https://0x90skids.com/assets/img/ctftime.png
 
 # Profile settings
 author:
