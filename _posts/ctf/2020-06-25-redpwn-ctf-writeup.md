@@ -10,6 +10,7 @@ tag:
 image: https://0x90skids.com/redpwn-ctf-writeup/carbon.png
 author: 0x90skids
 summmary: 0x90skids writeups for the 2020 RedPwn CTF Competition
+comments: true
 ---
 >  RedPwn is an annual CTF event hosted online. 0x90skids recently competed in the 2020 competition and placed 63 overall.
 

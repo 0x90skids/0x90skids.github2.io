@@ -7,6 +7,7 @@ tag:
   - ctf
   - writeup
 image: /cara-memperbarui-fork-repository/repo.png
+comments: true
 ---
 # Categories 
 
