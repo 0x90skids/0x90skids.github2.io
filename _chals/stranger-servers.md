@@ -2,7 +2,7 @@
 layout: default
 title: Stranger-Servers
 category: web
-author: tbutler0x90
+author: tbutler0x90 <a href="https://twitter.com/tbutler0x90"><img src="https://img.shields.io/twitter/follow/tbutler0x90?label=DM%20for%20Help&style=social"></a>
 date: 2020-07-14 01:00 +0700
 modified: 2020-07-14 01:00 +0700
 description: Help Save Dustin 
