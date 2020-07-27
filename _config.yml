@@ -17,7 +17,6 @@ twitter_username: 0x90skids # used for twitter card preview
 ctf_categories: 
   - web
   - pwn
-  - crypto
 
 # Profile settings
 author:

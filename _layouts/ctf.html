@@ -40,19 +40,20 @@
             <!-- Individual Challenge Block -->
 
               <!-- No Header Image Card-->
-              {% if chals.image == "none" or chals.image == "" %}
+              {% if chals.image %}
+              <div class="collapse multi-collapse" id="{{ chals .title }}">
+                <div class="card mb-3 text-white bg-dark font-weight-lighter">
+                  <img src="{{ chals.image }}" class="card-img-top" alt="...">
+ 
+                
+              <!-- Large Header Image Card -->
+              {% else %}
               <div class="collapse multi-collapse" id="{{ chals.title }}">
                 <!-- Card Header-->
                 <div class="card w-100">
                   <div class="card-header">
                       {{ chals.title }}
                   </div>
-                
-              <!-- Large Header Image Card -->
-              {% else %}
-              <div class="collapse multi-collapse" id="{{ chals .title }}">
-                <div class="card mb-3 text-white bg-dark">
-                  <img src="{{ chals.image }}" class="card-img-top" alt="...">
               {% endif %}
 
                   <!-- Card Body-->
@@ -60,14 +61,12 @@
                     <i>Author: {{ chals.author }}</i>
                     <h5 style="color:white;">{{ chals.description }}</h5>
                     <br/>
-                    <p class="text-warning">test</p>
-                    <p> {{ chals.content }} </p>
-                    <p> sdf </p>
+                    <p> {{ chals.content | markdownify }} </p>
 
                   <!-- Optional Popup  -->
-                  {% if chals.popup == "true" or chals.popup == "" %}
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">{{ chals.popup_title }}</button>
-                      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
+                  {% if chals.popup %}
+                    <button type="button" class="btn btn-primary" data-toggle="modal" id="{{ chals.popup_title }}" data-target=".bd-example-modal-sm">{{ chals.popup_title }}</button>
+                      <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="{{ chals.popup_title }}" aria-hidden="true">
                         <div class="modal-dialog modal-sm bg-dark">
                           <div class="modal-content bg-dark">
                             <p class="text-light">{{ chals.popupcontent }}</p>
@@ -77,66 +76,21 @@
                   {% endif %}
 
               <!-- Optional Link  -->
-              {% if chals.link != "none" or chals.link != "" %}
+              {% if chals.link %}
                 <a class="btn btn-primary text-light" href="{{ chals.link }}" role="button">{{ chals.link }}</a>
               {% endif %}
 
 
+                  </div>
+
+
+
+                </div>
               </div>
-
-
-
-              </div>
-            </div>
-            <!-- End of Challenge Card Block-->    
-            {% endif %}
+              <!-- End of Challenge Card Block-->    
+              {% endif %}
+            {% endfor %}
           {% endfor %}
-      {% endfor %}
-
-
-      <h1> test session </h1>
-
-      {% for chals in site.chals %}
-        {% if chals.category == "web" %}
-          {% if chals.image == "none" %}
-          <div class="collapse multi-collapse" id="{{ chals.title }}">
-              <div class="card w-100">
-                <div class="card-header">
-                    {{ chals.title }}
-                </div>
-            {% elsif chals.image != "none" %}
-            <div class="collapse multi-collapse" id="{{ chals.title }}">
-            <div class="card mb-3 text-white bg-dark">
-              <img src="{{ chals.image }}" class="card-img-top" alt="...">
-            {% endif %}
-                <div class="card-body">
-                  <i>Author: {{ chals.author }}</i>
-                  <h5 style="color:white;">{{ chals.description }}</h5>
-                  <br/>
-                  <p class="card-text">{{ chals.content | markdownify }}</p>
-                  {% if chals.popup != "none" %}
-                  <!-- Small modal -->
-                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target=".bd-example-modal-sm">View Message</button>
-
-                    <div class="modal fade bd-example-modal-sm" tabindex="-1" role="dialog" aria-labelledby="mySmallModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-sm bg-dark">
-                        <div class="modal-content bg-dark">
-                            <p class="text-light">{{ chals.popupcontent }}</p>
-                        </div>
-                      </div>
-                    </div>
-                  {% endif %}
-                  {% if chals.link != "none" %}
-                    <a class="btn btn-primary text-light" href="{{ chals.link }}" role="button">{{ chals.link }}</a>
-                  {% endif %}
-                </div>
-              </div>
-          </div>
-        {% endif %}
-      {% endfor %}
-
-      
-
     </main>
     {% include footer.html %}
   </div>
