@@ -6,13 +6,19 @@ modified: 2020-07-25 15:35:00 +07:00
 tag:
   - ctf
   - writeup
-comments: true
+comments: true  
+image: https://0x90skids.com/cybrics-ctf-writeup/xcorp-flag.png
+author: 0x90skids  
+summmary: 0x90skids writeups for the 2020 Cybrics CTF Competition  
+description:  0x90skids writeups for the 2020 Cybrics CTF Competition
 ---
 # Categories 
 
 +  [Rev](#rev)
 +  [Web](#web)
 +  [Forensics](#forensics)
++  [Network](#network)
+
 
 ## Rev
 
@@ -369,4 +375,41 @@ The task says the victim user is ```caleches```.
 User-Agent: UCWEB/2.0 (Linux; U; Opera Mini/7.1.32052/30.3697; www1.smart.com.ph/; GT-S5360) U2/1.0.0 UCBrowser/9.8.0.534 Mobile
 ```
 4. We search for that user agent in the packets.
-5. We investigate the TCP stream of this user agent, and we find out that it's for the login of user ```micropetalous```.
+5. We investigate the TCP stream of this user agent, and we find out that it's for the login of user ```micropetalous```.  
+
+
+## Network  
+
+### Xcorp  
+
+**Solved By:** [tbutler0x90](https://tbutler.org)   
+**Points:** 50  
+**Flag:** cybrics{53CuR1tY_N07_0b5CuR17Y}
+
+##### Challenge  
+
+This challenge features a ```.pcap``` file which the author describes as being captured on the ficticious "xcorp" network. It incudes the description that employees on the xcorp network are using "in-house software" to keep their secrets.    
+
+##### Solution  
+
+1) First, we opened the pcap file with packet capture analyzer, Wireshark.   
+2) Looking at the network traffic, we notice that the nc10.exe application is requested via the SMB protocol.      
+
+![](2020-07-025-cybrics-ctf/xcorp-nc10.png)    
+
+3) Using the file --> export objects option in wireshark, the nc10.exe and other files requested are exported.      
+
+![](2020-07-025-cybrics-ctf/xcorp-export.png)    
+
+1) The executable was a Microsoft Windows application. In order to run, it was executed in a windows VM.  The application asks for a username which was also found during the pcap analysis.    
+
+![](2020-07-025-cybrics-ctf/xcorp-login.png)  
+
+5) Running the application with the username "u17ra_h4ck3r" gave us the flag.
+
+![](2020-07-025-cybrics-ctf/xcorp-flag.png)  
+
+
+
+
+
