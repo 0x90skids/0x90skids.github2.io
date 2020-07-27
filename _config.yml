@@ -12,6 +12,13 @@ url: https://0x90skids.com
 title_image: https://0x90skids.com/assets/img/ctftime.png
 twitter_username: 0x90skids # used for twitter card preview
 
+
+# Capture the Flag Settings 
+ctf_categories: 
+  - web
+  - pwn
+  - crypto
+
 # Profile settings
 author:
   name: 0x90skids # author name
