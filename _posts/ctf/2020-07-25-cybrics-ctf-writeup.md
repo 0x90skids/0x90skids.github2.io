@@ -7,7 +7,7 @@ tag:
   - ctf
   - writeup
 comments: true  
-image: https://0x90skids.com/cybrics-ctf-writeup/xcorp-flag.png
+image: https://0x90skids.com/cybrics-ctf-writeup/2020-07-025-cybrics-ctf/xcorp-username.png
 author: 0x90skids  
 summmary: 0x90skids writeups for the 2020 Cybrics CTF Competition  
 description:  0x90skids writeups for the 2020 Cybrics CTF Competition
@@ -132,9 +132,9 @@ This challenge features a ```.pcap``` file which the author describes as being c
 
 1) The executable was a Microsoft Windows application. In order to run, it was executed in a windows VM.  The application asks for a username which was also found during the pcap analysis.    
 
-![](2020-07-025-cybrics-ctf/xcorp-login.png)  
+![](2020-07-025-cybrics-ctf/xcorp-username.png)  
 
-5) Running the application with the username "u17ra_h4ck3r" gave us the flag.
+1) Running the application with the username "u17ra_h4ck3r" gave us the flag.
 
 ![](2020-07-025-cybrics-ctf/xcorp-flag.png)  
 
