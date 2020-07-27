@@ -9,7 +9,8 @@ description: simplecalc
 link: https://github.com/0x90skids/simplecalc
 image: /assets/img/simplecalc-ctf.png
 tip: none
-popup: true
+popup: false 
+popup_title: View Message
 popupcontent: I think there may be a secret code hidden in the application... I wonder what it does?
 summary: simplecalc is a beginner / intermediate pwn challenge with an emphasis on binary exploitation.
 ---

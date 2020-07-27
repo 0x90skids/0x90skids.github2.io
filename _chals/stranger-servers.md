@@ -9,7 +9,7 @@ description: Help Save Dustin
 link: http://142.93.140.219
 image: /assets/img/stranger-servers-ctf.png
 tip: none
-popup: false 
+popup: true 
 popup_title: View Message
 popupcontent: Mike, something weird is going on at the library. I was able to hack into some russian form I found on the website. I think the they're  using the library as a front for more mindflayer research. I can't find where the form is again but if you can find it and gain admin access, we might be able to find what they're up to. Here's the link to the library website. Oh, and i think "роботы" has something to do with it all. </br> ~ Dustin  
 summary: Stranger Servers is a begginner level Stranger Things themed CTF Challenge focusing on web application security with a hint of OSINT  
@@ -24,7 +24,3 @@ It's the early *90's* and several years after the last season Stranger Things. M
 
 *Flag 3:* Find the admin's secret message 
 
-```python
-def test():
-    print("this is a test")
-```
