@@ -13,9 +13,7 @@
 
       {{page.excerpt}}
 
-
       <!-- Capture the Flag Challenge Block -->
-
       <!-- Challenge Buttons -->
       <!-- Loop Over CTF Categories from Config.yml -->
       {% for items in site.ctf_categories %}
@@ -24,28 +22,14 @@
           <!-- Loop over the Challenges in _chals folder-->
           {% for chals in site.chals %}
             {% if chals.category == items %}
-            <!-- Individual Challenge Block -->
             <!-- Challenge Button -->
             <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#{{ chals.title }}" aria-expanded="false" aria-controls="multiCollapseExample2">{{chals.title}}</button>
-            {% endif %}
-          {% endfor %}
-      {% endfor %}
-
-      <!-- Challenge Cards -->
-      {% for items in site.ctf_categories %}
-          <!-- Loop over the Challenges in _chals folder-->
-          {% for chals in site.chals %}
-            {% if chals.category == items %}
-
             <!-- Individual Challenge Block -->
-
               <!-- No Header Image Card-->
               {% if chals.image %}
               <div class="collapse multi-collapse" id="{{ chals .title }}">
                 <div class="card mb-3 text-white bg-dark font-weight-lighter">
                   <img src="{{ chals.image }}" class="card-img-top" alt="...">
- 
-                
               <!-- Large Header Image Card -->
               {% else %}
               <div class="collapse multi-collapse" id="{{ chals.title }}">
@@ -55,14 +39,12 @@
                       {{ chals.title }}
                   </div>
               {% endif %}
-
                   <!-- Card Body-->
                   <div class="card-body">
                     <i>Author: {{ chals.author }}</i>
                     <h5 style="color:white;">{{ chals.description }}</h5>
                     <br/>
                     <p> {{ chals.content | markdownify }} </p>
-
                   <!-- Optional Popup  -->
                   {% if chals.popup %}
                     <button type="button" class="btn btn-primary" data-toggle="modal" id="{{ chals.popup_title }}" data-target=".bd-example-modal-sm">{{ chals.popup_title }}</button>
@@ -74,23 +56,17 @@
                         </div>
                       </div>
                   {% endif %}
-
               <!-- Optional Link  -->
               {% if chals.link %}
                 <a class="btn btn-primary text-light" href="{{ chals.link }}" role="button">{{ chals.link }}</a>
               {% endif %}
-
-
                   </div>
-
-
-
                 </div>
               </div>
-              <!-- End of Challenge Card Block-->    
-              {% endif %}
-            {% endfor %}
+            {% endif %}
           {% endfor %}
+      {% endfor %}
+
     </main>
     {% include footer.html %}
   </div>
