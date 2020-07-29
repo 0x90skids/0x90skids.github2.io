@@ -417,7 +417,7 @@ This challenge features a ```.pcap``` file which the author describes as being c
 
 ##### Challenge
 
-Help Nick recall how he invited his friends to the birthday party. Download details: [broken_invitation.pdf](2020-07-025-cybrics-ctf/broken_invitation.pdf) 
+Help Nick recall how he invited his friends to the birthday party. Download details: [broken_invitation.pdf](/assets/pdf/broken_invitation.pdf) 
 
 ##### Solution
 
