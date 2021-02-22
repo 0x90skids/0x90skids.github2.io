@@ -63,7 +63,7 @@ Seems like it's a simple email send form. By checking the page source code, I fo
 		});
 	}
 ```
-So, `create_letter` generates an XML string that gets sent has a GET request to `send_letter.php` with param `letter`. It then returns data & status as an alert popup.
+So, `create_letter` generates an XML string that gets sent as a GET request to `send_letter.php` with param `letter`. It then returns data and status in a popup.
 When first seeing an XML file being rendered in the back-end, I automatically think of an XXE ([XML External Entity](https://owasp.org/www-community/vulnerabilities/XML_External_Entity_(XXE)_Processing)) attack.
 <br>
 In order for us to exploit this, we need the back-end server to return data in some way. So I started to check which fields of the form I could use to extract data.
@@ -73,7 +73,7 @@ The alert popup gave us valuable information :
 <img src="images\tenable-ctf\sendletter_alert.png" alt="chall alert">
 
 This tells us that the `name` field gets reflected back in the alert and that the file we (probably) need to read is `/tmp/messages_outbound.txt`. Great!<br>
-I started crafting my payload, tested using Burp and found that the following payload worked :
+I started crafting my payload and tested it using Burp. The following payload worked :
 
 ```xml
 <?xml version="1.0" encoding="ISO-8859-1"?><!DOCTYPE foo [ <!ENTITY xxe SYSTEM "file:///tmp/messages_outbound.txt"> ]><letter><from>0x90skids</from><return_addr>return_addr</return_addr><name>&xxe;</name><addr>addr</addr><message>message</message></letter>
@@ -99,10 +99,10 @@ Alternate URL: [http://167.71.246.232:8080/rabbit_hole.php](http://167.71.246.23
 ##### Solution
 
 First up, I visited the URL mentionned in the challenge description. It returned this : `[513, '71'] 4O48APmBiNJhZBfTWMzD`<br>
-Also, the URL changes to : `http://167.71.246.232:8080/rabbit_hole.php?page=cE4g5bWZtYCuovEgYSO1`. Interesting!<br>
+Also, an interesting change to the URL : `http://167.71.246.232:8080/rabbit_hole.php?page=cE4g5bWZtYCuovEgYSO1`<br>
 Since the challenge is called "Follow the Rabbit Hole", I've tried "following" the page using the code provided so I used the link : `?page=4O48APmBiNJhZBfTWMzD`<br>
-This brings us to another page with the same set of data (an array with a number & what appears to be HEX). So let's automate this process because I don't know how far the rabbit hole goes.<br>
-I've played around with different versions of a Python script to fetch the data but I finally used :
+This brings us to another page with the same set of data (an array with a number & what appears to be HEX). So let's automate this process because I don't know how far the rabbit hole goes...<br>
+I've played around with different versions of a script to fetch the data but I finally used :
 ```python
 import requests
 import csv
@@ -126,7 +126,7 @@ with open('C:\\Users\\Bib\\Downloads\\rabbit_hole.csv', 'w', newline='') as csvf
         except:
             print("Script end.")
 ```
-So basically, I went all the way down the rabbit hole and fetched all data inside a CSV file. Then I sorted the data using the first number as an index.
+So basically, I went all the way down the rabbit hole and fetched all data inside a CSV file. Then, I sorted the data using the first number as an index.
 <table>
   <tr>
     <td>
@@ -148,7 +148,7 @@ So basically, I went all the way down the rabbit hole and fetched all data insid
 
 
 After the data was sorted, I made a huge string with the HEX values and passed that to an HEX to ASCII converter. It gave me garbage data but I was able to see the header `PNG`.<br>
-Instead, I re-ran the converter to a PNG file :<br>
+Knowing this, I re-ran the converter to a PNG file :<br>
 <br>
 <img src="images\tenable-ctf\rabbit_hole_flag.png" alt="flag">
 
