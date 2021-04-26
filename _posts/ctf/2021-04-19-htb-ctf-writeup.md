@@ -66,9 +66,7 @@ def get_password():
 
 get_password()
 ```
-<br>
 Here's the output from my script :
-<br>
 ```
 Bruteforcing password... Please wait!
 CHTB{
@@ -120,7 +118,7 @@ CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3
 CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3}
 Found password : CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3}
 ```
-<br>
 Bingo! Interesting challenge that helped me understand NoSQL auth bypass techniques.
+<br>
 <br>
 `CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3}`
