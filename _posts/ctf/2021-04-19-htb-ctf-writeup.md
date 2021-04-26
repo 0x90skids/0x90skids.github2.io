@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Tenable CTF Writeup
+title: HackTheBox CTF Writeup
 date: 2021-04-19 01:00 +0700
 modified: 2021-04-26 09:45:00 +0700
 description:  0x90skids writeups for the 2021 HackTheBox CTF Competition
@@ -12,8 +12,9 @@ author: 0x90skids
 summmary: 0x90skids writeups for the 2021 HackTheBox CTF Competition
 comments: true
 ---
-<img class="img-fluid rounded z-depth-1" style="width:100px;height:100px;" src="htb_ctf_logo.png">
->  HackTheBox Cyber Apocalypse 2021 CTF was an event hosted online. 0x90skids recently competed in the competition.
+<img class="img-fluid rounded z-depth-1" src="htb_ctf_logo.png">
+>  HackTheBox Cyber Apocalypse 2021 CTF was an event hosted online.
+<br>0x90skids recently competed in the competition.
 
 # Categories 
 
@@ -63,7 +64,8 @@ def get_password():
         if c == possible_chars[-1]:
             print("Found password : "+password[1:].replace("\\", ""))
 
-get_password()```
+get_password()
+```
 <br>
 Here's the output from my script :
 <br>
@@ -116,8 +118,8 @@ CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0
 CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r
 CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3
 CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3}
-
-Found password : CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3}```
+Found password : CHTB{1_th1nk_the_4l1ens_h4ve_n0t_used_m0ng0_b3f0r3}
+```
 <br>
 Bingo! Interesting challenge that helped me understand NoSQL auth bypass techniques.
 <br>
